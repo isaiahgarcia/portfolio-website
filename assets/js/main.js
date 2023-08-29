@@ -49,6 +49,7 @@ const sendEmail = (e) => {
     emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, "#contact-form", process.env.PUBLIC_KEY)
         .then(() => {
             // Show success message
+            // WOrks only on localhost
             contactMessage.textContent = 'Message sent successfully ✅';
 
             // Hide success message after 5 seconds
