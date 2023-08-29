@@ -44,31 +44,43 @@ const contactForm = document.getElementById('contact-form'),
     contactMessage = document.getElementById('contact-message');
 
 const sendEmail = (e) => {
+    const formData = new FormData(contactForm);
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+    console.log(formData);
     e.preventDefault();
 
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, "#contact-form", process.env.PUBLIC_KEY)
-        .then(() => {
-            // Show success message
-            // WOrks only on localhost
-            contactMessage.textContent = 'Message sent successfully ✅';
+    fetch('https://ig-backend-887bc2c7bde6.herokuapp.com/send-email', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({data})
+    })
+    .then(response => response.json())
+    .then(() => {
+        // Success logic
+        contactMessage.textContent = 'Message sent successfully ✅';
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                contactMessage.textContent = '';
-            }, 5000);
+        // Remove message after 5 seconds
+        setTimeout(() => {
+            contactMessage.textContent = '';
+        }, 5000);
 
-            // Clear the form
-            contactForm.reset();
-        }, () => {
-            // Show error message
-            contactMessage.textContent = 'Message not sent (service error) ❌';
+        // Clear form
+        contactForm.reset();
+    })
+    .catch(error => {
+        // Error logic
+        contactMessage.textContent = 'Message not sent (service error) ❌';
 
-            // Hide error message after 5 seconds
-            setTimeout(() => {
-                contactMessage.textContent = '';
-            }, 5000);
-
-        });
+        // Remove message after 5 seconds
+        setTimeout(() => {
+            contactMessage.textContent = '';
+        }, 5000);
+    });
 };
 
 contactForm.addEventListener('submit', sendEmail);
