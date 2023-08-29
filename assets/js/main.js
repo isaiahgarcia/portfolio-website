@@ -49,7 +49,6 @@ const sendEmail = (e) => {
     for (const [key, value] of formData.entries()) {
         data[key] = value;
     }
-    console.log(formData);
     e.preventDefault();
 
     fetch('https://ig-backend-887bc2c7bde6.herokuapp.com/send-email', {
@@ -84,6 +83,15 @@ const sendEmail = (e) => {
 };
 
 contactForm.addEventListener('submit', sendEmail);
+
+/*=============== REQUEST RESUME ===============*/
+const requestResumeBtn = document.getElementById('request-resume-btn');
+// Change text content of contact form message field to request resume
+const requestResume = () => {
+    document.getElementById('subject').value = 'Resume Request';
+    document.getElementById('message').value = 'Hi Isaiah,\n\nI would like to request your resume for [state your reason].';
+};
+requestResumeBtn.addEventListener('click', requestResume);
 
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
