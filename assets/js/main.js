@@ -38,3 +38,17 @@ const shadowHeader = () =>{
                        : header.classList.remove('shadow-header');
 }
 window.addEventListener('scroll', shadowHeader);
+
+/*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+    contactMessage = document.getElementById('contact-message');
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    // serviceId - templateId - #form - publicKey
+    emailjs.sendForm('', '', '', '')
+
+};
+
+contactForm.addEventListener('submit', sendEmail);
