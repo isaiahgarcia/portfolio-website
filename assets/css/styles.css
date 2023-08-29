@@ -595,6 +595,10 @@ img {
     margin-bottom: 1.5rem;
 }
 
+.about__description b {
+    background: linear-gradient(90deg, hsla(14, 98%, 50%, .3), hsla(14, 98%, 50%, 0));
+}
+
 .about__description::after {
     content: '';
     width: 20px;

@@ -114,3 +114,16 @@ const scrollActive = () =>{
 	})
 }
 window.addEventListener('scroll', scrollActive)
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true // Animations repeat
+});
+
+sr.reveal(`.home__perfil, .about__image`, {origin: 'right'});
+sr.reveal(`.home__name, .home__info, .about__container .section__title-1, .about__info, .contact__social, .contact__data`, {origin: 'right'});
+sr.reveal(`.projects__card`, {origin: 'right'});
