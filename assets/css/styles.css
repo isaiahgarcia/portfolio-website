@@ -751,11 +751,15 @@ img {
 }
 
 .experience__container:nth-child(2) {
-    animation-delay: 1s;
+    animation-delay: 2s;
 }
 
 .experience__container:nth-child(3) {
-    animation-delay: 2s;
+    animation-delay: 4s;
+}
+
+.experience__container:nth-child(4) {
+    animation-delay: 6s;
 }
 
 .experience__timeline-text-box {
@@ -899,10 +903,26 @@ img {
         left: 19px;
     }
 
-    .experience__timeline-left-arrow, .experience__timeline-right-arrow{
+    .experience__timeline-left-arrow, .experience__timeline-right-arrow {
         border-right: 15px solid var(--white-color);
         border-left: 0;
         left: -15px;
+    }
+
+    .box-left:hover {
+        border-left: 0;
+        border-right: 15px solid var(--white-color);
+        transition: border-right .4s;
+    }
+
+    .experience__timeline-text-box:hover .experience__timeline-left-arrow {
+        border-right: 15px solid var(--container-color);
+        border-left: 0;
+        transition: border-right .4s;
+    }
+
+    .experience__button {
+        text-align: center;
     }
 }
 
