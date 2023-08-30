@@ -716,7 +716,7 @@ img {
 
 /*=============== EXEPRIENCE ===============*/
 .experience {
-    background-color: var(--container-color3);
+    background-color: var(--background-color);
     transition: background-color .4s;
 }
 
@@ -772,7 +772,7 @@ img {
 
 .box-left:hover {
     cursor: pointer;
-    background-color: var(--container-color);
+    background-color: var(--first-color);
     transition: color .4s;
     border-left: 15px solid var(--white-color);
     transition: border-left .4s;
@@ -780,19 +780,19 @@ img {
 
 .box-right:hover {
     cursor: pointer;
-    background-color: var(--container-color);
+    background-color: var(--first-color);
     transition: color .4s;
     border-right: 15px solid var(--white-color);
     transition: border-right .4s;
 }
 
 .experience__timeline-text-box:hover .experience__timeline-left-arrow {
-    border-left: 15px solid var(--container-color);
+    border-left: 15px solid var(--first-color);
     transition: border-left .4s;
 }
 
 .experience__timeline-text-box:hover .experience__timeline-right-arrow {
-    border-right: 15px solid var(--container-color);
+    border-right: 15px solid var(--first-color);
     transition: border-right .4s;
 }
 
@@ -815,7 +815,7 @@ img {
     position: absolute;
     width: 6px;
     height: 100%;
-    background-color: var(--white-color);
+    background-color: var(--first-color);
     top: 0;
     left: 50%;
     margin-left: -3px;
@@ -840,7 +840,7 @@ img {
     right: -28px;
     top: 40px;
     z-index: 1;
-    color: var(--white-color);
+    color: var(--first-color);
     font-size: 25px;
 }
 
@@ -916,7 +916,7 @@ img {
     }
 
     .experience__timeline-text-box:hover .experience__timeline-left-arrow {
-        border-right: 15px solid var(--container-color);
+        border-right: 15px solid var(--first-color);
         border-left: 0;
         transition: border-right .4s;
     }
@@ -928,28 +928,18 @@ img {
 
 .experience__bottom {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 
 }
 
 .experience__button {
-    background-color: var(--white-color);
+    background-color: var(--black-color);
     padding: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     column-gap: .5rem;
-    color: var(--black-color);
-    font-weight: var(--font-bold);
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    font-size: var(--normal-font-size);
 }
-
-.experience__button:hover {
-    cursor: pointer;
-    background-color: var(--container-color);
-    transition: background-color .4s;
-}
-
-
 
 
 /*=============== CONTACT ===============*/
